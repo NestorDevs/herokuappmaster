@@ -10,10 +10,13 @@ async function bootstrap() {
     .setTitle('nestApp')
     .setDescription('App Nestjs')
     .setVersion('1.0')
-    .setBasePath('https://heroku-nest-app.herokuapp.com/api')
+    .addServer(
+      'https://heroku-nest-app.herokuapp.com/api',
+      'api de prueba para documentar las api',
+    )
     .build();
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('docs', app, document);
   await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
