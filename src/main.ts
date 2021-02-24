@@ -10,7 +10,7 @@ async function bootstrap() {
     .setTitle('Nestjs-App')
     .setDescription('App Nestjs... for testing swagger module')
     .setVersion('1.0')
-    .setBasePath('https://heroku-nest-app.herokuapp.com/api')
+    .setBasePath('https://heroku-nest-app.herokuapp.com/docs')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('docs', app, document);
