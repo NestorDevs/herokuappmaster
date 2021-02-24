@@ -7,13 +7,10 @@ async function bootstrap() {
   app.enableCors();
 
   const options = new DocumentBuilder()
-    .setTitle('nestApp')
-    .setDescription('App Nestjs')
+    .setTitle('Nestjs-App')
+    .setDescription('App Nestjs... for testing swagger module')
     .setVersion('1.0')
-    .addServer(
-      'https://heroku-nest-app.herokuapp.com/api',
-      'api de prueba para documentar las api',
-    )
+    .setBasePath('https://heroku-nest-app.herokuapp.com/api')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('docs', app, document);
