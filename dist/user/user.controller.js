@@ -13,6 +13,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
+const openapi = require("@nestjs/swagger");
 const common_1 = require("@nestjs/common");
 const user_service_1 = require("./user.service");
 const create_user_dto_1 = require("./dto/create-user.dto");
@@ -38,6 +39,7 @@ let UserController = class UserController {
 };
 __decorate([
     common_1.Post(),
+    openapi.ApiResponse({ status: 201, type: String }),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto]),
@@ -45,12 +47,14 @@ __decorate([
 ], UserController.prototype, "create", null);
 __decorate([
     common_1.Get(),
+    openapi.ApiResponse({ status: 200, type: String }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "findAll", null);
 __decorate([
     common_1.Get(':id'),
+    openapi.ApiResponse({ status: 200, type: String }),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
@@ -58,6 +62,7 @@ __decorate([
 ], UserController.prototype, "findOne", null);
 __decorate([
     common_1.Put(':id'),
+    openapi.ApiResponse({ status: 200, type: String }),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, Object]),
@@ -65,6 +70,7 @@ __decorate([
 ], UserController.prototype, "update", null);
 __decorate([
     common_1.Delete(':id'),
+    openapi.ApiResponse({ status: 200, type: String }),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
